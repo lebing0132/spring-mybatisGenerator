@@ -1,0 +1,63 @@
+buildscript {
+	ext {
+		springBootVersion = '2.0.6.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+}
+
+
+dependencies {
+	implementation('org.springframework.boot:spring-boot-starter')
+	compile group: 'org.mybatis.generator', name: 'mybatis-generator-core', version:'1.3.2'
+	compile('com.jslsolucoes:ojdbc6:11.2.0.1.0') 
+    compile group: 'org.mybatis', name: 'mybatis', version: '3.4.6'
+
+
+	testImplementation('org.springframework.boot:spring-boot-starter-test')
+}
+
+
+//mybatis generator plugin ------ start
+/*
+	buildscript {
+	repositories {
+	    maven {
+	        url "https://plugins.gradle.org/m2/"
+	     }
+	   }
+	dependencies {
+	    classpath "gradle.plugin.com.arenagod.gradle:mybatis-generator-plugin:1.4"
+	   }
+	}
+	
+	apply plugin: "com.arenagod.gradle.MybatisGenerator"
+	
+	configurations {
+	    mybatisGenerator
+	}
+	
+	mybatisGenerator {
+	    verbose = true
+	    configFile = 'D:/workspace-sts-3.9.2.RELEASE/spring-test/src/main/resources/dbtools/dbConfig.xml'
+	}
+*/
+//mybatis generator plugin ------ end
+
