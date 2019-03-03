@@ -1,1 +1,3 @@
 # spring-mybatisGenerator
+
+基于springboot中的mybatisGenerator工具，可以根据表自动生成dao，mapper，controller，service等代码，从而快速的构建代码和基于此进行业务逻辑的开发。
